@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import TimeLine from './frontend/timeline/timeline';
-import Header from './frontend/header/header';
+import { HashRouter, Route } from 'react-router-dom';
+import Details from './frontend/Details/Details.js';
+
 
 
 import './App.css';
 
-class App extends Component {    
+class App extends Component {
 
     render() {
         return (
-            <div className="App">
-                <Header />
-                <TimeLine />
-            </div>
+            <HashRouter>
+                <div className="App">
+                    <Route exact path="/" component={TimeLine} />
+                    <Route exact path="/:dayId" component={Details} />
+                </div>
+            </HashRouter>
         );
     }
 }

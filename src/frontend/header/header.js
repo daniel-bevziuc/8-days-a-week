@@ -1,41 +1,25 @@
 import React from 'react';
 import ReactTextRotator from 'react-text-rotator';
 import './header.css';
-import CryptoCard from '../crypto/crypto';
+import Nav from '../Nav/Nav';
+import { HashLink as Link } from 'react-router-hash-link';
 
 
 export default function Header() {
-  const coinData = {
-    name: 'Bitcoin',
-    symbol: 'BTC',
-  }
-
     return (
-      <div className="Header" id="header-section">
-        <div className="nav-container">
-          <div className="container">
-            <div className="nav-bar">
-              <div className="header-logo">
-                <a>8 Days a Week</a>
-              </div>
-              <nav id="navigation">
-                <CryptoCard
-                  name={coinData.name}
-                  symbol={coinData.symbol}
-                />
-              </nav>
-            </div>
-          </div>
-        </div>
+      <div className='Header'>
+        <Nav />
         <div className="container">
           <div className="welcome-area">
             <div className="header-text text-center">
               <MyComponent />
             </div>
             <div className='arrow'>
-              <span></span>
-              <span></span>
-              <span></span>
+              <Link to="/#timeline">
+                <span></span>
+                <span></span>
+                <span></span>
+              </Link>
             </div>
           </div>
         </div>
@@ -45,7 +29,7 @@ export default function Header() {
 
 const content = [
   {
-    text: 'Frontend Developer',
+    text: 'Software Developer',
     className: 'classA',
     animation: 'fade',
   },
@@ -60,7 +44,7 @@ const content = [
     animation: 'fade',
   },
   {
-    text: 'Love IT',
+    text: 'Tech Hobbyist',
     className: 'classA',
     animation: 'fade',
   },
@@ -68,7 +52,7 @@ const content = [
 
 const MyComponent = () => (
   <div>
-    <h2 id="textRotator">I'm Coding Woman</h2>
+    <h2 id="textRotator">Women are under-represented in the UK's technology sector.</h2>
     <ReactTextRotator
       content={content}
       time={3000}
